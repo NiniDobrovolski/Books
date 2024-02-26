@@ -103,8 +103,15 @@ while (ContinueOrNot == 1)
     else if (ans == "3") // Search book by its title
     {
         Console.WriteLine("Enter book's title you want to search");
-        string booktitle = Console.ReadLine();
-        bookManager.SearchBook(booktitle);
+        string booktitle = Console.ReadLine();       
+        if(bookManager.BookExistByTitle(booktitle)==true)
+        {
+            bookManager.SearchBook(booktitle);
+        }
+        else
+        {
+            Console.WriteLine("Book doesn't exist.");
+        }
     }
     else if (ans == "4") //Exit
     {

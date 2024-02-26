@@ -59,6 +59,18 @@ namespace Books
             }
             return false;
         }
+        public bool BookExistByTitle(string title)
+        {
+            // Iterating through the list of books and comparing each book's title
+            foreach (var item in BooksList)
+            {
+                if (item.Title == title)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
         // Method to search for a book by its title
         public void SearchBook(string title)
